@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Registration Page";
+}
+
+<div class="row justify-content-center align-items-center" style="min-height:80vh;">
+    <div class="col-md-6">
+        <div class="form-container p-4 shadow rounded bg-white position-relative">
+            <h2 class="text-center mb-4">Registration</h2>
+            <form id="registrationForm">
+                <div class="mb-3 position-relative">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" data-bs-toggle="tooltip" title="Enter your valid email address">
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" id="fname" class="form-control" placeholder="Enter your first name" data-bs-toggle="tooltip" title="Enter your first name">
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" id="lname" class="form-control" placeholder="Enter your last name" data-bs-toggle="tooltip" title="Enter your last name">
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password" data-bs-toggle="tooltip" title="Choose a strong password">
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" id="city" class="form-control" placeholder="Enter your city" data-bs-toggle="tooltip" title="Enter your city">
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label class="form-label">Gender</label><br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="male" name="gender" value="Male" data-bs-toggle="tooltip" title="Select Male if you are male">
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="female" name="gender" value="Female" data-bs-toggle="tooltip" title="Select Female if you are female">
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                </div>
+
+                <div class="mb-3 position-relative">
+                    <label for="studyLevel" class="form-label">Study Level</label>
+                    <select id="studyLevel" class="form-select" data-bs-toggle="tooltip" title="Choose your study level">
+                        <option value="BA">BA</option>
+                        <option value="Master">Master</option>
+                        <option value="PhD">PhD</option>
+                    </select>
+                </div>
+
+                <button type="button" class="btn btn-primary w-100" id="saveBtn">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Enable Bootstrap tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+
+        // Change background color when save button is clicked
+        document.getElementById('saveBtn').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'yellow';
+        });
+    </script>
+}
